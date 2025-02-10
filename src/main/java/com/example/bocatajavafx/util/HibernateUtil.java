@@ -10,7 +10,7 @@ public class HibernateUtil {
         try {
             return new Configuration().configure().buildSessionFactory();
         } catch (Throwable ex) {
-            System.err.println("Error al crear SessionFactory: " + ex); //TODO: Me explota porque creo que necesito el jdbc de mariadb
+            System.err.println("Error al crear SessionFactory: " + ex);
             throw new ExceptionInInitializerError(ex);
         }
     }

@@ -24,6 +24,22 @@ public class Alumno {
     public Alumno() {
     }
 
+    public int getNia() {
+        return nia;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
     @Override
     public String toString() {
         return "Alumno{" +

@@ -9,7 +9,7 @@ public class AlumnoService {
     private final AlumnoDAO alumnoDAO = new AlumnoDAO();
 
     public void save(Alumno alumno) {
-        //TODO: Validar antes de guardar
+        // Validar antes de guardar
         alumnoDAO.save(alumno);
     }
 

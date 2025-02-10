@@ -4,6 +4,7 @@ module com.example.bocatajavafx {
     requires jakarta.persistence;
     requires java.naming;
     requires org.hibernate.orm.core;
+    requires jbcrypt;
 
 
     opens com.example.bocatajavafx to javafx.fxml, org.hibernate.orm.core;
