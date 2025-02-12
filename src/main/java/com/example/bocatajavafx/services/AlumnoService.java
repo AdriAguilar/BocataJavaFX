@@ -8,18 +8,24 @@ import java.util.List;
 
 public class AlumnoService {
     private final AlumnoDAO alumnoDAO = new AlumnoDAO();
+    private static String username;
 
     public void save(Alumno alumno) {
         // Validar antes de guardar
         alumnoDAO.save(alumno);
     }
 
-    public String loginAlumno(String email, String pw) {
+    public LoginResponse loginAlumno(String email, String pw) {
         Alumno alumno = getAlumno(email);
-        if (alumno != null && verifyPassword(pw, alumno.getContrasena())) {
-            return "Sesión iniciada";
+        if (alumno == null) {
+            return new LoginResponse(false, "Usuario no encontrado");
         }
-        return "Alumno no logeado";
+        username = alumno.getNombre();
+        if (verifyPassword(pw, alumno.getContrasena())) {
+            return new LoginResponse(true, username);
+        } else {
+            return new LoginResponse(false, "Contraseña incorrecta");
+        }
     }
 
     public List<Alumno> getAll() {
@@ -28,6 +34,10 @@ public class AlumnoService {
 
     public Alumno getAlumno(String email) {
         return alumnoDAO.getAlumno(email);
+    }
+
+    public static String getUsername() {
+        return username;
     }
 
     public boolean verifyPassword(String pw, String hash) {
