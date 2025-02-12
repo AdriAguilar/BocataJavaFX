@@ -18,7 +18,7 @@ public class LoginController {
     private static String username;
 
     @FXML
-    private TextField usernameField;
+    private TextField emailField;
 
     @FXML
     private PasswordField passwordField;
@@ -28,7 +28,7 @@ public class LoginController {
 
     @FXML
     private void handleLogin() throws IOException {
-        String email = usernameField.getText();
+        String email = emailField.getText();
         String password = passwordField.getText();
 
         AlumnoService alumnoService = new AlumnoService();

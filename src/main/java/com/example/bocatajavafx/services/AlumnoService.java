@@ -18,13 +18,13 @@ public class AlumnoService {
     public LoginResponse loginAlumno(String email, String pw) {
         Alumno alumno = getAlumno(email);
         if (alumno == null) {
-            return new LoginResponse(false, "Usuario no encontrado");
+            return new LoginResponse(false, "Usuario no encontrado.");
         }
         username = alumno.getNombre();
         if (verifyPassword(pw, alumno.getContrasena())) {
             return new LoginResponse(true, username);
         } else {
-            return new LoginResponse(false, "Contraseña incorrecta");
+            return new LoginResponse(false, "¡Contraseña incorrecta!");
         }
     }
 
