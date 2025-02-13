@@ -1,6 +1,7 @@
 package com.example.bocatajavafx.controllers;
 
 import com.example.bocatajavafx.MainApp;
+import com.example.bocatajavafx.models.Usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,11 +16,17 @@ public class MainController {
     private Label usernameLabel;
 
     @FXML
+    public Label roleLabel;
+
+    @FXML
     private Button logoutBtn;
 
     public void initialize() {
         String username = LoginController.getUsername();
+        String role = LoginController.getRole();
+
         usernameLabel.setText("Bienvenido, " + username);
+        roleLabel.setText(role);
     }
 
     public void handleLogout() throws IOException {

@@ -11,11 +11,10 @@ public class Usuario {
     private String username;
     @Column(nullable = false)
     private String contrasena;
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Rol rol;
+    private String rol;
 
-    public Usuario(int id, String username, String contrasena, Rol rol) {
+    public Usuario(int id, String username, String contrasena, String rol) {
         this.id = id;
         this.username = username;
         this.contrasena = contrasena;
@@ -37,12 +36,7 @@ public class Usuario {
         return contrasena;
     }
 
-    public Rol getRol() {
+    public String getRol() {
         return rol;
-    }
-
-    public enum Rol {
-        cocina,
-        administrador
     }
 }

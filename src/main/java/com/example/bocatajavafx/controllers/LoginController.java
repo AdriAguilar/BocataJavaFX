@@ -2,6 +2,7 @@ package com.example.bocatajavafx.controllers;
 
 import com.example.bocatajavafx.MainApp;
 import com.example.bocatajavafx.models.Alumno;
+import com.example.bocatajavafx.models.Usuario;
 import com.example.bocatajavafx.services.AlumnoService;
 import com.example.bocatajavafx.services.LoginResponse;
 import com.example.bocatajavafx.services.UsuarioService;
@@ -18,6 +19,7 @@ import java.io.IOException;
 
 public class LoginController {
     private static String username;
+    private static String role;
 
     @FXML
     private TextField emailField;
@@ -37,6 +39,7 @@ public class LoginController {
 
         if (response.isSuccess()) {
             username = response.getMessage();
+            role = response.getRole();
             openMain();
         } else {
             System.out.println(response.getMessage());
@@ -65,6 +68,9 @@ public class LoginController {
 
     public static String getUsername() {
         return username;
+    }
+    public static String getRole() {
+        return role;
     }
 
     private LoginResponse login(String user, String password, boolean isAlumno) {

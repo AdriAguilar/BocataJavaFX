@@ -15,7 +15,7 @@ public class UsuarioService {
         }
         username = usuario.getUsername();
         if (ValidatorUtil.verifyPassword(pw, usuario.getContrasena())) {
-            return new LoginResponse(true, username);
+            return new LoginResponse(true, username, usuario.getRol());
         } else {
             return new LoginResponse(false, "¡Contraseña incorrecta!");
         }
