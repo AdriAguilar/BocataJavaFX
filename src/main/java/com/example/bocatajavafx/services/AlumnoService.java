@@ -24,7 +24,7 @@ public class AlumnoService {
         if (ValidatorUtil.verifyPassword(pw, alumno.getContrasena())) {
             return new LoginResponse(true, username);
         } else {
-            return new LoginResponse(false, "¡Contraseña incorrecta!");
+            return new LoginResponse(false, "¡Credenciales incorrectos!");
         }
     }
 

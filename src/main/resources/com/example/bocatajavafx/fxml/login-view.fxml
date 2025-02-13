@@ -19,13 +19,13 @@
         <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
 
-    <Text text="Iniciar Sesión" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+    <Text text="BocataFX" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
         <font>
             <Font name="Tahoma" size="20"/>
         </font>
     </Text>
 
-    <Label text="Correo:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Label text="Email/Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
     <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
