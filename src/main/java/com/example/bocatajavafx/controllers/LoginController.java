@@ -61,7 +61,7 @@ public class LoginController {
         stage.setMinWidth(800);
         stage.setMinHeight(675);
 
-        stage.setResizable(true);
+        stage.setResizable(false);
 
         stage.show();
     }

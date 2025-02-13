@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx">
+    <Button text="Elegir Bocadillo" />
+    <Button text="Mis Pedidos" />
+    <Button text="Pedidos" />
+    <Button text="Menu" />
+</VBox>
+

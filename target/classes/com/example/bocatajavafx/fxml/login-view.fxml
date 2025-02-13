@@ -25,7 +25,7 @@
         </font>
     </Text>
 
-    <Label text="Correo/Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Label text="Email/Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
     <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
