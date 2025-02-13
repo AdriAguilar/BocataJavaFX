@@ -8,8 +8,10 @@
         <property name="connection.password"/>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.logging.level">ERROR</property>
 
         <mapping class="com.example.bocatajavafx.models.Alumno"/>
+        <mapping class="com.example.bocatajavafx.models.Usuario"/>
 
     </session-factory>
 </hibernate-configuration>

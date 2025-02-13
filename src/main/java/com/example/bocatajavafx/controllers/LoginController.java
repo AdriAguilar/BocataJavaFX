@@ -4,6 +4,8 @@ import com.example.bocatajavafx.MainApp;
 import com.example.bocatajavafx.models.Alumno;
 import com.example.bocatajavafx.services.AlumnoService;
 import com.example.bocatajavafx.services.LoginResponse;
+import com.example.bocatajavafx.services.UsuarioService;
+import com.example.bocatajavafx.util.ValidatorUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -28,11 +30,10 @@ public class LoginController {
 
     @FXML
     private void handleLogin() throws IOException {
-        String email = emailField.getText();
+        String user = emailField.getText();
         String password = passwordField.getText();
 
-        AlumnoService alumnoService = new AlumnoService();
-        LoginResponse response = alumnoService.loginAlumno(email, password);
+        LoginResponse response = login(user, password, ValidatorUtil.isAlumno(user));
 
         if (response.isSuccess()) {
             username = response.getMessage();
@@ -64,5 +65,15 @@ public class LoginController {
 
     public static String getUsername() {
         return username;
+    }
+
+    private LoginResponse login(String user, String password, boolean isAlumno) {
+        if (isAlumno) {
+            AlumnoService alumnoService = new AlumnoService();
+            return alumnoService.loginAlumno(user, password);
+        } else {
+            UsuarioService usuarioService = new UsuarioService();
+            return usuarioService.loginUsuario(user, password);
+        }
     }
 }

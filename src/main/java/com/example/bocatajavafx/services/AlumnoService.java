@@ -2,7 +2,7 @@ package com.example.bocatajavafx.services;
 
 import com.example.bocatajavafx.dao.AlumnoDAO;
 import com.example.bocatajavafx.models.Alumno;
-import org.mindrot.jbcrypt.BCrypt;
+import com.example.bocatajavafx.util.ValidatorUtil;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class AlumnoService {
             return new LoginResponse(false, "Usuario no encontrado.");
         }
         username = alumno.getNombre();
-        if (verifyPassword(pw, alumno.getContrasena())) {
+        if (ValidatorUtil.verifyPassword(pw, alumno.getContrasena())) {
             return new LoginResponse(true, username);
         } else {
             return new LoginResponse(false, "¡Contraseña incorrecta!");
@@ -38,12 +38,5 @@ public class AlumnoService {
 
     public static String getUsername() {
         return username;
-    }
-
-    public boolean verifyPassword(String pw, String hash) {
-        if (hash.startsWith("$2y$")) {
-            hash = "$2a$" + hash.substring(4);
-        }
-        return BCrypt.checkpw(pw, hash);
     }
 }
