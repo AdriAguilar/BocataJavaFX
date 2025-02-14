@@ -13,6 +13,7 @@
         <mapping class="com.example.bocatajavafx.models.Alumno"/>
         <mapping class="com.example.bocatajavafx.models.Usuario"/>
         <mapping class="com.example.bocatajavafx.models.Bocadillo"/>
+        <mapping class="com.example.bocatajavafx.models.Pedido"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -2,6 +2,8 @@ package com.example.bocatajavafx.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "alumnos")
 public class Alumno {
@@ -13,6 +15,9 @@ public class Alumno {
     private String correo;
     @Column(nullable = false)
     private String contrasena;
+
+    @OneToMany(mappedBy = "alumno")
+    private List<Pedido> pedidos;
 
     public Alumno(int nia, String nombre, String correo, String contrasena) {
         this.nia = nia;
@@ -38,6 +43,10 @@ public class Alumno {
 
     public String getContrasena() {
         return contrasena;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
     }
 
     @Override

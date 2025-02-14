@@ -2,6 +2,7 @@ package com.example.bocatajavafx.services;
 
 import com.example.bocatajavafx.dao.AlumnoDAO;
 import com.example.bocatajavafx.models.Alumno;
+import com.example.bocatajavafx.models.Pedido;
 import com.example.bocatajavafx.util.ValidatorUtil;
 
 import java.util.List;
@@ -34,6 +35,15 @@ public class AlumnoService {
 
     public Alumno getAlumno(String email) {
         return alumnoDAO.getAlumno(email);
+    }
+
+    public Alumno getAlumnoByName(String name) {
+        return alumnoDAO.getAlumnoByName(name);
+    }
+
+    public List<Pedido> getAlumnoPedidos(int nia) {
+        Alumno alumno = alumnoDAO.getAlumnoPedidos(nia);
+        return alumno.getPedidos();
     }
 
     public static String getUsername() {

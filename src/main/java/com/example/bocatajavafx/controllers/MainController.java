@@ -1,7 +1,9 @@
 package com.example.bocatajavafx.controllers;
 
 import com.example.bocatajavafx.MainApp;
+import com.example.bocatajavafx.models.Alumno;
 import com.example.bocatajavafx.models.Usuario;
+import com.example.bocatajavafx.services.AlumnoService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,6 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainController {
+    private static Alumno alumno;
     @FXML
     private Label usernameLabel;
 
@@ -28,6 +31,9 @@ public class MainController {
     public void initialize() {
         String username = LoginController.getUsername();
         String role = LoginController.getRole();
+
+        AlumnoService alumnoService = new AlumnoService();
+        alumno = alumnoService.getAlumnoByName(username);
 
         usernameLabel.setText("Bienvenido, " + username);
         viewByRol(role);
@@ -126,5 +132,9 @@ public class MainController {
         if (borderPane != null) {
             borderPane.setCenter(newCenter);
         }
+    }
+
+    public static Alumno getAlumno() {
+        return alumno;
     }
 }

@@ -40,4 +40,22 @@ public class AlumnoDAO {
         }
         return alumno;
     }
+
+    public Alumno getAlumnoByName(String name) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Query<Alumno> query = session.createQuery("FROM Alumno WHERE nombre = :name", Alumno.class);
+            query.setParameter("name", name);
+
+            return query.uniqueResult();
+        }
+    }
+
+    public Alumno getAlumnoPedidos(int nia) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Query<Alumno> query = session.createQuery("FROM Alumno a LEFT JOIN FETCH a.pedidos WHERE a.nia = :nia", Alumno.class);
+            query.setParameter("nia", nia);
+
+            return query.uniqueResult();
+        }
+    }
 }
