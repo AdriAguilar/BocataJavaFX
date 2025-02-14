@@ -3,7 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx">
-    <Button text="Pedidos" />
-    <Button text="Menu" />
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.bocatajavafx.controllers.CocinaController">
+    <Button fx:id="pedidosBtn" text="Pedidos" />
+    <Button fx:id="menuBtn" text="Menu" />
 </VBox>

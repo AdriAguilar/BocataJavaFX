@@ -4,9 +4,11 @@ import com.example.bocatajavafx.MainApp;
 import com.example.bocatajavafx.models.Usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -17,10 +19,7 @@ public class MainController {
     private Label usernameLabel;
 
     @FXML
-    private Label test;
-
-    @FXML
-    private VBox leftPanel;
+    private BorderPane borderPane;
 
     @FXML
     private Button logoutBtn;
@@ -64,7 +63,7 @@ public class MainController {
         stage.setMinWidth(300);
         stage.setMinHeight(275);
 
-        stage.setResizable(true);
+        stage.setResizable(false);
 
         stage.show();
     }
@@ -72,10 +71,16 @@ public class MainController {
     private void alumnoView() {
         try {
             FXMLLoader leftLoader = new FXMLLoader(MainApp.class.getResource("fxml/alumno-left-panel.fxml"));
-            VBox alumnoLeftPanel = leftLoader.load();
-            leftPanel.getChildren().setAll(alumnoLeftPanel);
+            FXMLLoader pedirBocataLoader = new FXMLLoader(MainApp.class.getResource("fxml/pedir-bocata-view.fxml"));
 
-            test.setText("Soy un alumno");
+            Node alumnoLeftPanel = leftLoader.load();
+            Node pedirBocata = pedirBocataLoader.load();
+
+            AlumnoController leftController = leftLoader.getController();
+            leftController.setMainController(this);
+
+            borderPane.setLeft(alumnoLeftPanel);
+            borderPane.setCenter(pedirBocata);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -84,10 +89,16 @@ public class MainController {
     private void cocinaView() {
         try {
             FXMLLoader leftLoader = new FXMLLoader(MainApp.class.getResource("fxml/cocina-left-panel.fxml"));
-            VBox cocinaLeftPanel = leftLoader.load();
-            leftPanel.getChildren().setAll(cocinaLeftPanel);
+            FXMLLoader pedidosCocinaLoader = new FXMLLoader(MainApp.class.getResource("fxml/pedidos-cocina-view.fxml"));
 
-            test.setText("Soy cocina");
+            Node cocinaLeftPanel = leftLoader.load();
+            Node pedidosCocina = pedidosCocinaLoader.load();
+
+            CocinaController leftController = leftLoader.getController();
+            leftController.setMainController(this);
+
+            borderPane.setLeft(cocinaLeftPanel);
+            borderPane.setCenter(pedidosCocina);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -96,12 +107,24 @@ public class MainController {
     private void adminView() {
         try {
             FXMLLoader leftLoader = new FXMLLoader(MainApp.class.getResource("fxml/admin-left-panel.fxml"));
-            VBox adminLeftPanel = leftLoader.load();
-            leftPanel.getChildren().setAll(adminLeftPanel);
+            FXMLLoader pedirBocataLoader = new FXMLLoader(MainApp.class.getResource("fxml/pedir-bocata-view.fxml"));
 
-            test.setText("Soy administrador");
+            Node adminLeftPanel = leftLoader.load();
+            Node pedirBocata = pedirBocataLoader.load();
+
+            AdminController leftController = leftLoader.getController();
+            leftController.setMainController(this);
+
+            borderPane.setLeft(adminLeftPanel);
+            borderPane.setCenter(pedirBocata);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void setCenter(Node newCenter) {
+        if (borderPane != null) {
+            borderPane.setCenter(newCenter);
         }
     }
 }

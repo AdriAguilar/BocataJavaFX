@@ -23,7 +23,7 @@ public class MainApp extends Application {
         stage.setMinWidth(300);
         stage.setMinHeight(275);
 
-        stage.setResizable(true);
+        stage.setResizable(false);
 
         stage.show();
     }

@@ -3,10 +3,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx">
-    <Button text="Elegir Bocadillo" />
-    <Button text="Mis Pedidos" />
-    <Button text="Pedidos" />
-    <Button text="Menu" />
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.bocatajavafx.controllers.AdminController">
+    <Button fx:id="pedirBocataBtn" text="Pedir Bocadillo" />
+    <Button fx:id="misPedidosBtn" text="Mis Pedidos" />
+    <Button fx:id="pedidosBtn" text="Pedidos" />
+    <Button fx:id="menuBtn" text="Menu" />
 </VBox>
 
