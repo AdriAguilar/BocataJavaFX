@@ -16,6 +16,10 @@ public class Alumno {
     @Column(nullable = false)
     private String contrasena;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "curso_id", nullable = false)
+    private Curso curso;
+
     @OneToMany(mappedBy = "alumno")
     private List<Pedido> pedidos;
 
@@ -47,6 +51,10 @@ public class Alumno {
 
     public List<Pedido> getPedidos() {
         return pedidos;
+    }
+
+    public Curso getCurso() {
+        return curso;
     }
 
     @Override
