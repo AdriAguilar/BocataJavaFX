@@ -63,4 +63,24 @@ public class Pedido {
     public String getEstado() {
         return estado;
     }
+
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
+    }
+
+    public void setBocadillo(Bocadillo bocadillo) {
+        this.bocadillo = bocadillo;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setCosteTotal(float costeTotal) {
+        this.costeTotal = costeTotal;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 }

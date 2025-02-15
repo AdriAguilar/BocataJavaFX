@@ -32,7 +32,7 @@ public class PedidosCocinaController {
                         if (item != null) {
                             setText("Pedido ID: " + item.getId() + "  -  " + item.getBocadillo().getNombre() +
                                     "  -  " + item.getAlumno().getNombre() +
-                                    "  -  Curso: " + item.getAlumno().getCurso().getNombre() +
+                                    "  -  " + item.getAlumno().getCurso().getNombre() +
                                     "  -  Total: " + item.getCosteTotal() + "€"
                             );
                         } else {
