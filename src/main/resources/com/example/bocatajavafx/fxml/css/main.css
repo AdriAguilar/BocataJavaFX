@@ -1,0 +1,60 @@
+.root {
+    -fx-background-color: #ffffff;
+}
+
+#borderPane {
+    -fx-padding: 10px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+}
+
+ToolBar {
+    -fx-background-color: #333333;
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 4px;
+}
+
+#usernameLabel {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px;
+}
+
+#logoutBtn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-cursor: hand;
+}
+
+#logoutBtn:hover {
+    -fx-background-color: #555555;
+    -fx-text-fill: #ffffff;
+}
+
+.left {
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 10px;
+    -fx-border-radius: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+.center {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20px;
+    -fx-border-radius: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+Region {
+    -fx-background-color: transparent;
+}

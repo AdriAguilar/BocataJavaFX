@@ -1,0 +1,68 @@
+.root {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 0);
+}
+
+#gridPane {
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 20px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+Text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: #333333;
+    -fx-padding: 10px 0;
+}
+
+/* Etiquetas (Label) */
+Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+}
+
+TextField, PasswordField {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 10px;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+}
+
+TextField:hover, PasswordField:hover {
+    -fx-border-color: #aaaaaa;
+}
+
+TextField:focused, PasswordField:focused {
+    -fx-border-color: #000000;
+    -fx-border-width: 1px;
+}
+
+#loginBtn {
+    -fx-background-color: #000000;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-border-radius: 4px;
+    -fx-cursor: hand;
+}
+
+#loginBtn:hover {
+    -fx-background-color: #333333;
+}
+
+/* Mensaje de acción */
+#actiontarget {
+    -fx-font-size: 12px;
+    -fx-fill: #ff4d4d;
+    -fx-padding: 5px 0;
+}
+
+HBox {
+    -fx-alignment: baseline-right;
+}

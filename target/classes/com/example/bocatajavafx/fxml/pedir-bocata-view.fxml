@@ -4,11 +4,15 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import java.net.URL?>
 <HBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.bocatajavafx.controllers.PedirBocataController"
       alignment="CENTER" spacing="20"
       prefHeight="400.0" prefWidth="600.0">
+    <stylesheets>
+        <URL value="@css/pedir-bocata.css"/>
+    </stylesheets>
 
     <Button fx:id="BFrio" text="Bocadillo Frío" />
     <Button fx:id="BCaliente" text="Bocadillo Caliente" />

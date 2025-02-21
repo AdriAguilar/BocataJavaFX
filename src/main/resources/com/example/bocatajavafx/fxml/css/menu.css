@@ -1,0 +1,63 @@
+.root {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+}
+
+VBox {
+    -fx-alignment: CENTER;
+    -fx-spacing: 20px;
+    -fx-padding: 20px;
+}
+
+Label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 10px 0;
+}
+
+#menuTable {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+    -fx-padding: 10px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #333333;
+}
+
+.table-view .column-header-background .label {
+    -fx-text-fill: #ffffff !important;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #eaeaea;
+    -fx-text-fill: #000000;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #dcdcdc;
+    -fx-text-fill: #000000;
+}

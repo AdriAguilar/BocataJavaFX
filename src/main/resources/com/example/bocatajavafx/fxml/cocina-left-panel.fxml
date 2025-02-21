@@ -4,7 +4,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import java.net.URL?>
 <VBox alignment="TOP_CENTER" spacing="20" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bocatajavafx.controllers.CocinaController">
+    <stylesheets>
+        <URL value="@css/left-panel.css"/>
+    </stylesheets>
     <Button fx:id="pedidosBtn" maxWidth="Infinity" text="Pedidos" />
     <Button fx:id="menuBtn" maxWidth="Infinity" text="Menu" />
    <padding>
