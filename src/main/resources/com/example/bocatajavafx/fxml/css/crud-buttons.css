@@ -1,0 +1,27 @@
+.root {
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-padding: 20px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 0);
+}
+
+HBox {
+    -fx-padding: 10px 0;
+}
+
+Button {
+    -fx-background-color: #333333; /* Gris oscuro */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 4px;
+    -fx-cursor: hand;
+}
+
+Button:hover {
+    -fx-background-color: #555555; /* Oscurecer al pasar el cursor */
+}
+
+Button:focused {
+    -fx-background-color: #777777; /* Fondo más oscuro cuando está seleccionado */
+}

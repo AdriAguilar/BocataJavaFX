@@ -16,7 +16,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("fxml/login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 280);
+        Scene scene = new Scene(fxmlLoader.load(), 400, 320);
         stage.setTitle("Iniciar Sesión - BocataFX");
         stage.setScene(scene);
 

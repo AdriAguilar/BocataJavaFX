@@ -9,21 +9,10 @@ import com.example.bocatajavafx.models.Pedido;
 import java.sql.Date;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.format.TextStyle;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 
 public class PedidoService {
     private final PedidoDAO pedidoDAO = new PedidoDAO();
-    private static final List<Character> DIAS = List.of('L', 'M', 'X', 'J', 'V');
-    private static final Map<Character, String> NOMBRES_DIAS = Map.of(
-            'L', "Lunes",
-            'M', "Martes",
-            'X', "Miércoles",
-            'J', "Jueves",
-            'V', "Viernes"
-    );
 
     public void save(Pedido pedido) {
         if (!pedidoDAO.hasOrderedToday(MainController.getAlumno().getNia())) {
@@ -58,7 +47,7 @@ public class PedidoService {
         pedido.setBocadillo(bocadillo);
         pedido.setFecha(today);
         pedido.setCosteTotal(bocadillo.getCoste());
-        pedido.setEstado("Pendiente");
+        pedido.setEstado("pendiente");
 
         pedidoDAO.save(pedido);
 

@@ -9,8 +9,8 @@
     <stylesheets>
         <URL value="@css/left-panel.css"/>
     </stylesheets>
-    <Button fx:id="pedirBocataBtn" maxWidth="Infinity" text="Pedir Bocadillo" />
-    <Button fx:id="misPedidosBtn" maxWidth="Infinity" text="Mis Pedidos" />
+    <Button fx:id="addBocatasBtn" maxWidth="Infinity" text="Añadir Bocadillos" />
+    <Button fx:id="addAlumnosBtn" maxWidth="Infinity" text="Añadir Alumnos" />
     <Button fx:id="pedidosBtn" maxWidth="Infinity" text="Pedidos" />
     <Button fx:id="menuBtn" maxWidth="Infinity" text="Menu" />
    <padding>

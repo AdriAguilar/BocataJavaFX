@@ -6,27 +6,32 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.sql.Date;
 import java.util.List;
 
 public class AlumnoDAO {
 
     public void save(Alumno alumno) {
-        Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            transaction = session.beginTransaction();
-            session.persist(alumno);
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
+            Transaction transaction = session.beginTransaction();
+            if (alumno.getNia() == 0) {
+                session.persist(alumno);
+            } else {
+                session.merge(alumno);
             }
-            e.printStackTrace();
+            transaction.commit();
         }
     }
 
     public List<Alumno> getAll() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("FROM Alumno", Alumno.class).list();
+        }
+    }
+
+    public Alumno getById(int id) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.get(Alumno.class, id);
         }
     }
 
@@ -56,6 +61,34 @@ public class AlumnoDAO {
             query.setParameter("nia", nia);
 
             return query.uniqueResult();
+        }
+    }
+
+    public void desactivar(int nia, Date fecha, String motivo) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+            Alumno alumno = session.get(Alumno.class, nia);
+            if (alumno != null) {
+                alumno.setActivo(false);
+                alumno.setFechaBaja(fecha);
+                alumno.setMotivoBaja(motivo);
+                session.merge(alumno);
+            }
+            session.getTransaction().commit();
+        }
+    }
+
+    public void activar(int nia) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+            Alumno alumno = session.get(Alumno.class, nia);
+            if (alumno != null) {
+                alumno.setActivo(true);
+                alumno.setFechaBaja(null);
+                alumno.setMotivoBaja(null);
+                session.merge(alumno);
+            }
+            session.getTransaction().commit();
         }
     }
 }

@@ -18,7 +18,7 @@ Label {
     -fx-padding: 10px 0;
 }
 
-#menuTable {
+.table-view {
     -fx-background-color: #f9f9f9;
     -fx-border-color: #cccccc;
     -fx-border-width: 1px;

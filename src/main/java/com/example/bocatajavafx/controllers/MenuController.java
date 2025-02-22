@@ -36,7 +36,7 @@ public class MenuController {
     private TableColumn ccoste;
 
     private static final List<Character> DIAS = List.of('L', 'M', 'X', 'J', 'V');
-    private static final Map<Character, String> NOMBRES_DIAS = Map.of(
+    static final Map<Character, String> NOMBRES_DIAS = Map.of(
             'L', "Lunes",
             'M', "Martes",
             'X', "Miércoles",
@@ -68,7 +68,6 @@ public class MenuController {
         }
 
         cnombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-
         ctipo.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Bocadillo, String>, ObservableValue<String>>() {
             @Override
             public ObservableValue<String> call(TableColumn.CellDataFeatures<Bocadillo, String> cellData) {
@@ -76,7 +75,6 @@ public class MenuController {
                 return new SimpleStringProperty(tipo.equals("frio") ? "Frío" : "Caliente");
             }
         });
-
         cdia.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Bocadillo, String>, ObservableValue<String>>() {
             @Override
             public ObservableValue<String> call(TableColumn.CellDataFeatures<Bocadillo, String> cellData) {
@@ -84,12 +82,15 @@ public class MenuController {
                 return new SimpleStringProperty(NOMBRES_DIAS.getOrDefault(diaChar, "Desconocido"));
             }
         });
-
         cmenu.setCellValueFactory(new PropertyValueFactory<>("menu"));
-
-        ccoste.setCellValueFactory(new PropertyValueFactory<>("coste"));
-
-        menuTable.getColumns().addAll(cnombre, ctipo, cdia, cmenu, ccoste);
+        ccoste.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Bocadillo, String>, ObservableValue<String>>() {
+            @Override
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Bocadillo, String> cellData) {
+                double coste = cellData.getValue().getCoste();
+                String costeEur = String.format("%.2f €", coste);
+                return new SimpleStringProperty(costeEur);
+            }
+        });
 
         menuTable.setItems(bocadilloList);
 

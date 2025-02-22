@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<?import java.net.URL?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bocatajavafx.controllers.AlumnosManagerController" spacing="10" alignment="CENTER">
+    <stylesheets>
+        <URL value="@css/table.css"/>
+        <URL value="@css/crud-buttons.css"/>
+        <URL value="@css/crud-panels.css"/>
+    </stylesheets>
+    <Label id="AGLabel" text="Gestión de Bocadillos" />
+
+    <TableView fx:id="alumnosTable" prefHeight="300" prefWidth="600">
+        <columns>
+            <TableColumn text="NIA" fx:id="niaColumn" />
+            <TableColumn text="Nombre" fx:id="nombreColumn" />
+            <TableColumn text="Email" fx:id="emailColumn" />
+            <TableColumn text="Curso" fx:id="cursoColumn" />
+            <TableColumn text="Activo" fx:id="activoColumn" />
+            <TableColumn text="Fecha B." fx:id="fechaColumn" />
+            <TableColumn text="Motivo B." fx:id="motivoColumn" />
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Crear" onAction="#handleCreate" />
+        <Button text="Editar" onAction="#handleUpdate" />
+        <Button text="Activar" onAction="#handleActivate" />
+        <Button text="Desactivar" onAction="#handleDisable" />
+    </HBox>
+</VBox>

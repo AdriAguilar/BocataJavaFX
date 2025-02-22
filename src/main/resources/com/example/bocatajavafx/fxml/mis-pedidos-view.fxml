@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
 
-<?import javafx.scene.control.ListView?>
-<ListView fx:id="pedidos" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bocatajavafx.controllers.MisPedidosController">
-</ListView>
+<?import javafx.scene.control.TableColumn?>
+<?import java.net.URL?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bocatajavafx.controllers.MisPedidosController" spacing="10" alignment="CENTER" prefWidth="1000" prefHeight="600">
+    <stylesheets>
+        <URL value="@css/table.css"/>
+    </stylesheets>
+    <Label text="Pedidos de Hoy" />
+    <TableView fx:id="pedidosTable" prefHeight="500" prefWidth="980">
+        <columns>
+            <TableColumn fx:id="cid" text="ID" prefWidth="10"/>
+            <TableColumn fx:id="cbocata" text="Bocadillo" prefWidth="200"/>
+            <TableColumn fx:id="cfecha" text="Fecha" prefWidth="30"/>
+            <TableColumn fx:id="cestado" text="Estado" prefWidth="50"/>
+            <TableColumn fx:id="ctotal" text="Total" prefWidth="10"/>
+        </columns>
+    </TableView>
+</VBox>

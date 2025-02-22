@@ -62,4 +62,28 @@ public class Bocadillo {
     public int getMenu() {
         return menu;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setIngredientes(String ingredientes) {
+        this.ingredientes = ingredientes;
+    }
+
+    public void setCoste(float coste) {
+        this.coste = coste;
+    }
+
+    public void setDia(char dia) {
+        this.dia = dia;
+    }
+
+    public void setMenu(int menu) {
+        this.menu = menu;
+    }
 }

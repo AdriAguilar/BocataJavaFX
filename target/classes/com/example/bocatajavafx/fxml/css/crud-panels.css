@@ -1,0 +1,134 @@
+.root {
+    -fx-background-color: #ffffff;
+}
+
+GridPane {
+    -fx-padding: 20px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+#BGLabel, #AGLabel {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 10px 0;
+}
+
+Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+TextField, PasswordField, ComboBox, DatePicker {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 10px;
+}
+
+TextField:hover, PasswordField:hover, ComboBox:hover, DatePicker:hover {
+    -fx-border-color: #aaaaaa;
+}
+
+TextField:focused, PasswordField:focused, ComboBox:focused, DatePicker:focused {
+    -fx-border-color: #000000;
+    -fx-border-width: 1px;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: #333333;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: #555555;
+}
+
+.dialog-pane .button-bar .button:focused {
+    -fx-background-color: #777777;
+}
+
+.alert .header-panel {
+    -fx-background-color: #ff6b6b;
+}
+
+#alert-confirm-activate .header-panel {
+    -fx-background-color: #333333;
+}
+
+.alert .header-panel .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+}
+
+.alert .content {
+    -fx-padding: 20px;
+}
+
+.alert .button-bar .button {
+    -fx-background-color: #333333;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.alert .button-bar .button:hover {
+    -fx-background-color: #555555;
+}
+
+.alert .button-bar .button:focused {
+    -fx-background-color: #777777;
+}
+
+.date-picker {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 10px;
+}
+
+.date-picker:hover {
+    -fx-border-color: #aaaaaa;
+}
+
+.date-picker:focused {
+    -fx-border-color: #000000;
+    -fx-border-width: 1px;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.date-picker-popup {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 0);
+}
+
+.date-picker-popup .day-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #333333;
+    -fx-padding: 5px;
+}
+
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: #eaeaea;
+}
+
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: #333333;
+    -fx-text-fill: #ffffff;
+}

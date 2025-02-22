@@ -5,11 +5,10 @@
 <?import javafx.scene.control.Label?>
 
 <?import java.net.URL?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.control.TableColumn?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bocatajavafx.controllers.MenuController" spacing="10" alignment="CENTER" prefWidth="800" prefHeight="600">
     <stylesheets>
-        <URL value="@css/menu.css"/>
+        <URL value="@css/table.css"/>
     </stylesheets>
     <Label text="Menú de Bocadillos" />
     <TableView fx:id="menuTable" prefHeight="500" prefWidth="780">
@@ -18,7 +17,7 @@
             <TableColumn fx:id="ctipo" text="Tipo" prefWidth="50"/>
             <TableColumn fx:id="cdia" text="Día" prefWidth="50"/>
             <TableColumn fx:id="cmenu" text="Menú" prefWidth="30"/>
-            <TableColumn fx:id="ccoste" text="Coste (€)" prefWidth="30"/>
+            <TableColumn fx:id="ccoste" text="Coste" prefWidth="30"/>
         </columns>
     </TableView>
 </VBox>

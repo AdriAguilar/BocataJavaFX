@@ -12,10 +12,10 @@ public class AdminController {
     private MainController mainController;
 
     @FXML
-    private Button pedirBocataBtn;
+    private Button addBocatasBtn;
 
     @FXML
-    private Button misPedidosBtn;
+    private Button addAlumnosBtn;
 
     @FXML
     private Button pedidosBtn;
@@ -28,8 +28,8 @@ public class AdminController {
     }
 
     public void initialize() {
-        pedirBocataBtn.setOnAction(event -> changeView("fxml/pedir-bocata-view.fxml"));
-        misPedidosBtn.setOnAction(event -> changeView("fxml/mis-pedidos-view.fxml"));
+        addBocatasBtn.setOnAction(event -> changeView("fxml/gestion-bocatas-view.fxml"));
+        addAlumnosBtn.setOnAction(event -> changeView("fxml/gestion-alumnos-view.fxml"));
         pedidosBtn.setOnAction(event -> changeView("fxml/pedidos-cocina-view.fxml"));
         menuBtn.setOnAction(event -> changeView("fxml/menu-view.fxml"));
     }

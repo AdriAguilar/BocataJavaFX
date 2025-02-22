@@ -10,6 +10,10 @@ public class ValidatorUtil {
         return BCrypt.checkpw(pw, hash);
     }
 
+    public static String hashPassword(String pw) {
+        return BCrypt.hashpw(pw, BCrypt.gensalt());
+    }
+
     public static boolean isAlumno(String text) {
         String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
         return text.matches(regex);

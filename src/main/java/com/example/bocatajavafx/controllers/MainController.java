@@ -60,7 +60,7 @@ public class MainController {
         currentStage.close();
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("fxml/login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 280);
+        Scene scene = new Scene(fxmlLoader.load(), 400, 320);
 
         Stage stage = new Stage();
         stage.setTitle("Iniciar Sesión - BocataFX");
@@ -113,7 +113,7 @@ public class MainController {
     private void adminView() {
         try {
             FXMLLoader leftLoader = new FXMLLoader(MainApp.class.getResource("fxml/admin-left-panel.fxml"));
-            FXMLLoader pedirBocataLoader = new FXMLLoader(MainApp.class.getResource("fxml/pedir-bocata-view.fxml"));
+            FXMLLoader pedirBocataLoader = new FXMLLoader(MainApp.class.getResource("fxml/gestion-bocatas-view.fxml"));
 
             Node adminLeftPanel = leftLoader.load();
             Node pedirBocata = pedirBocataLoader.load();

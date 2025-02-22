@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<?import java.net.URL?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bocatajavafx.controllers.BocatasManagerController" spacing="10" alignment="CENTER">
+    <stylesheets>
+        <URL value="@css/table.css"/>
+        <URL value="@css/crud-buttons.css"/>
+        <URL value="@css/crud-panels.css"/>
+    </stylesheets>
+    <Label id="BGLabel" text="Gestión de Bocadillos" />
+
+    <TableView fx:id="bocadillosTable" prefHeight="300" prefWidth="600">
+        <columns>
+            <TableColumn text="ID" prefWidth="50" fx:id="idColumn" />
+            <TableColumn text="Nombre" prefWidth="150" fx:id="nombreColumn" />
+            <TableColumn text="Tipo" prefWidth="100" fx:id="tipoColumn" />
+            <TableColumn text="Día" fx:id="diaColumn" />
+            <TableColumn text="Coste" prefWidth="100" fx:id="costeColumn" />
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Crear" onAction="#handleCreate" />
+        <Button text="Editar" onAction="#handleUpdate" />
+        <Button text="Eliminar" onAction="#handleDelete" />
+    </HBox>
+</VBox>
