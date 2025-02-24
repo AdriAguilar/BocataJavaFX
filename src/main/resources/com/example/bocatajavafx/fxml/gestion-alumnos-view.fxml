@@ -11,7 +11,7 @@
         <URL value="@css/crud-buttons.css"/>
         <URL value="@css/crud-panels.css"/>
     </stylesheets>
-    <Label id="AGLabel" text="Gestión de Bocadillos" />
+    <Label id="AGLabel" text="Gestión de Alumnos" />
 
     <TableView fx:id="alumnosTable" prefHeight="300" prefWidth="600">
         <columns>
